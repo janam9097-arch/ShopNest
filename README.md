@@ -1,87 +1,59 @@
-# ShopNest — Full-Stack E-Commerce Platform
+# ShopNest
 
-ShopNest is a production-ready, premium e-commerce platform engineered with a **React + Redux Toolkit** client application and a modular **Django REST Framework** service layer.
+A full-stack e-commerce platform built with React, Redux Toolkit, Django REST Framework, and PostgreSQL/SQLite.
 
----
+## Architecture
 
-## Technical Architecture
+- **Frontend:** React, Vite, Redux Toolkit, React Router, Tailwind CSS
+- **Backend:** Django, Django REST Framework, SimpleJWT, django-filter
+- **Database:** PostgreSQL for production, SQLite for development
+- **API:** REST API with Swagger/OpenAPI documentation
 
-* **Frontend**: React (Vite), Redux Toolkit (State Management), React Router, Tailwind CSS v4 (Aesthetics & Layouts), Lucide Icons, React Hook Form.
-* **Backend**: Django 5.x, Django REST Framework, SimpleJWT (JWT Authentication), django-filter, Pillow (Media processing), Stripe SDK.
-* **Database**: PostgreSQL (Production-ready) with dynamic automatic fallback to SQLite (Development-ready).
-* **API Documentation**: Interactive Swagger/OpenAPI UI.
+## Features
 
----
+- User authentication
+- Product catalog and categories
+- Cart and wishlist
+- Orders
+- Reviews
+- Coupons
+- Payment integration
+- Admin interface
+- API documentation
 
-## Quick Start (Local Development)
+## Local Development
 
-### 1. Prerequisite Checks
-* Python 3.10+
-* Node.js 18+
+### Backend
 
-### 2. Backend Setup
-1. Clone the repository and navigate to the backend folder:
-   ```bash
-   cd backend
-   ```
-2. Create and activate a Python virtual environment:
-   ```bash
-   python -m venv venv
-   # On Windows (PowerShell):
-   .\venv\Scripts\Activate.ps1
-   # On macOS/Linux:
-   source venv/bin/activate
-   ```
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Configure your `.env` environment variables using `.env.example`.
-5. Run migrations:
-   ```bash
-   python manage.py makemigrations
-   python manage.py migrate
-   ```
-6. (Optional) Seed database with high-quality mock products, categories, reviews, and order histories:
-   ```bash
-   python manage.py seed_data
-   ```
-7. Start the API server:
-   ```bash
-   python manage.py runserver
-   ```
-
-The backend API will be available at [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
-* Interactive API Documentation (Swagger): [http://127.0.0.1:8000/api/docs/](http://127.0.0.1:8000/api/docs/)
-* Django Administration Console: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
-
----
-
-### 3. Frontend Setup
-1. Navigate to the frontend folder:
-   ```bash
-   cd ../frontend
-   ```
-2. Install npm packages:
-   ```bash
-   npm install
-   ```
-3. Boot the Vite development server:
-   ```bash
-   npm run dev
-   ```
-
-The frontend client will be available at [http://localhost:5173/](http://localhost:5173/).
-
----
-
-## Unit Testing
-To run the automated API testing suite:
 ```bash
 cd backend
-python manage.py test users
+python -m venv venv
+# Windows
+.\venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
 ```
 
-## Demo Credentials
-* **Customer User**: `customer@shopnest.com` / `CustomerPassword123`
-* **Admin Superuser**: `admin@shopnest.com` / `AdminPassword123`
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+## Configuration
+
+Create a local `.env` file from the project's example configuration. Keep secrets, payment keys, JWT secrets, and database credentials out of Git.
+
+## Testing
+
+```bash
+cd backend
+python manage.py test
+```
+
+## Project Goal
+
+Demonstrate production-style full-stack development, REST API design, authentication, state management, database integration, and deployment readiness.
